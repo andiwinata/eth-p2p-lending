@@ -5,6 +5,7 @@
   "author": "andiwinata <andi.winata@hotmail.com>",
   "private": true,
   "scripts": {
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "dev": "nuxt --spa",
     "build": "nuxt build",
     "start": "nuxt start",
@@ -27,6 +28,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "node-sass": "^4.7.2",
+    "push-dir": "^0.4.1",
     "sass-loader": "^6.0.6"
   }
 }
