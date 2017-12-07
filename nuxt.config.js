@@ -39,7 +39,10 @@ module.exports = {
       }
     }
   },
-  router: {
-    base: '/eth-p2p-lending/'
-  }
+  // add base route if building for github page
+  ...process.env.ENVIRONMENT === 'GH_PAGES' ? {
+    router: {
+      base: '/eth-p2p-lending/'
+    }
+  } : {}
 }
