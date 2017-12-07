@@ -38,5 +38,8 @@ module.exports = {
         })
       }
     }
+  },
+  router: {
+    base: '/eth-p2p-lending/'
   }
 }
