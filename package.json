@@ -8,10 +8,10 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "dev": "nuxt --spa",
     "build": "nuxt build",
-    "build-gh": "cross-env ENVIRONMENT=GH_PAGES nuxt build",
+    "build-gh": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "generate-gh": "cross-env ENVIRONMENT=GH_PAGES nuxt generate",
+    "generate-gh": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
     "gh-pages": "yarn run build-gh && yarn run deploy",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
