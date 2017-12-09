@@ -14,7 +14,8 @@
     "generate-gh": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
     "gh-pages": "yarn run build-gh && yarn run deploy",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "format": "prettier --config .prettierrc --write \"**/*.js\""
   },
   "dependencies": {
     "bulma": "^0.6.1",
@@ -32,6 +33,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "node-sass": "^4.7.2",
+    "prettier": "^1.9.1",
     "push-dir": "^0.4.1",
     "sass-loader": "^6.0.6"
   }

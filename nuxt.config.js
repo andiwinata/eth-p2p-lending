@@ -1,7 +1,5 @@
 module.exports = {
-  css: [
-    'bulma'
-  ],
+  css: ['bulma'],
   /*
   ** Headers of the page
   */
@@ -12,9 +10,7 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Peer 2 peer lending in ethereum' }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
   ** Customize the progress bar color
@@ -28,7 +24,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
       if (ctx.dev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -40,9 +36,11 @@ module.exports = {
     }
   },
   // add base route if building for github page
-  ...process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-    router: {
-      base: '/eth-p2p-lending/'
-    }
-  } : {}
+  ...(process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/eth-p2p-lending/'
+        }
+      }
+    : {})
 }
