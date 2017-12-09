@@ -33,14 +33,21 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+    },
+    postcss: {
+      plugins: {
+        'postcss-custom-properties': {
+          warnings: false
+        }
+      }
     }
   },
   // add base route if building for github page
   ...(process.env.DEPLOY_ENV === 'GH_PAGES'
     ? {
-        router: {
-          base: '/eth-p2p-lending/'
-        }
+      router: {
+        base: '/eth-p2p-lending/'
       }
+    }
     : {})
 }
