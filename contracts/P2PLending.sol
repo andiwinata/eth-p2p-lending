@@ -10,11 +10,13 @@ contract P2PLending {
   event LendingOfferCreated(address indexed lender, address contractAddress);
   event BorrowRequestCreated(address indexed borrower, address contractAddress);
 
-  function P2PLending() {
+  function P2PLending() public {
 
   }
 
   function createLendingOffer(uint _interestRateMultipliedBy100) external payable returns (address) {
+    require(msg.value > 0);
+
     address lendingContract = new LendingOffer(msg.sender, msg.value, _interestRateMultipliedBy100);
     lendingContract.transfer(msg.value);
     

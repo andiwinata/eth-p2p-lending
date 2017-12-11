@@ -15,3 +15,6 @@ dist
 
 # editors
 .vscode
+
+# Truffle
+build
