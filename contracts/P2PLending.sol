@@ -17,8 +17,7 @@ contract P2PLending {
   function createLendingOffer(uint _interestRateMultipliedBy100) external payable returns (address) {
     require(msg.value > 0);
 
-    address lendingContract = new LendingOffer(msg.sender, msg.value, _interestRateMultipliedBy100);
-    lendingContract.transfer(msg.value);
+    address lendingContract = (new LendingOffer).value(msg.value)(msg.sender, msg.value, _interestRateMultipliedBy100);
     
     LendingOfferCreated(msg.sender, lendingContract);
     return lendingContract;

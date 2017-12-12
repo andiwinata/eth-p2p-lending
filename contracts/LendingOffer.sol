@@ -5,7 +5,7 @@ contract LendingOffer {
   uint amount;
   uint interestRateMultipliedBy100;
 
-  function LendingOffer(address _creator, uint _amount, uint _interestRateMultipliedBy100) public {
+  function LendingOffer(address _creator, uint _amount, uint _interestRateMultipliedBy100) payable public {
     lender = _creator;
     amount = _amount;
     interestRateMultipliedBy100 = _interestRateMultipliedBy100;
