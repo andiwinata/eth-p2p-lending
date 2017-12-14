@@ -7,9 +7,11 @@ import "./LendingOffer.sol";
 
 contract P2PLending {
 
-  event LendingOfferCreated(address indexed lender, address contractAddress);
-  event BorrowRequestCreated(address indexed borrower, address contractAddress);
+  struct LendingData {
+    
+  }
 
+  event LendingOfferCreated(address indexed lender, address contractAddress);
   function P2PLending() public {
 
   }
@@ -21,5 +23,18 @@ contract P2PLending {
     
     LendingOfferCreated(msg.sender, lendingContract);
     return lendingContract;
+  }
+
+  // data: { amount, interest, due date, status }
+  // and in JS: store listing id and array position when listeing to events
+  // 
+  // event listing created(id, from, data)
+  // event listing closed(id, from, data)
+  // event listing agreed(id, from, data)
+  // make agreement to valid listing only, agreement (id => data), then ask for approval from creator
+  // event approval requested(id, from, to)
+
+  function createLendingOfferListing() {
+
   }
 }
